@@ -1,0 +1,260 @@
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-weight: 800;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 10px;
+    overflow-x: hidden;
+}
+
+#containerPC .container {
+    margin-top: 10%;
+    width: 90%;
+}
+
+#containerPC img{
+    border-radius: 50px;
+    width: 50%;
+    height: auto;
+}
+
+#containerPC .subtextp{
+    letter-spacing: 2px;
+    color: white;
+    font-size: 25px;
+}
+
+#containerPC p{
+    color: white;
+    font-size: 35px;
+}
+
+
+/* MEDIA SCREEN CONFIGURATION */
+@media (max-width: 768px) {
+    #containerPC{
+        display: none;
+    }
+}
+@media (min-width: 769px) {
+    #containerPC{
+        display: contents;
+    }
+    #containerMobile{
+        display: none;
+    }
+}
+/* MEDIA SCREEN CONFIGURATION */
+
+
+.container{
+    margin-top: 20%;
+}
+
+.instructions{
+    padding: 10px;
+}
+.card {
+    padding: 25px;
+}
+
+.emoji-container {
+    display: grid;
+    width: 100%;
+    height: auto;
+    grid-template-columns: repeat(3, auto);
+    justify-content: center;
+    border-radius: 50px;
+    border: 4px solid #E9550D;
+    overflow: hidden;
+    background: #000;
+}
+
+h1,
+h2 {
+    line-height: 1.2;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #341238;
+}
+
+h1 span,
+h2 span {
+    -webkit-text-stroke-width: 0;
+}
+
+h1 {
+    font-size: 40px;
+    margin: 25px 0;
+}
+
+h2 {
+    font-size: 28px;
+    margin-bottom: 40px;
+}
+
+.emoji-btn {
+    background: url(img/testG.png);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    font-size: 50px;
+    border: 1px solid #E9550D;
+    padding: 0;
+    outline: none;
+    overflow: hidden;
+    user-select: none;
+    cursor: pointer;
+    transition: transform 0.5s, background-color 0.5s;
+}
+
+.img1{
+    background: url(../img/1.png);
+}
+.img2{
+    background: url(../img/2.png);
+}
+.img3{
+    background: url(../img/3.png);
+}
+.img4{
+    background: url(../img/4.png);
+}
+.img5{
+    background: url(../img/5.png);
+}
+.img6{
+    background: url(../img/6.png);
+}
+.img7{
+    background: url(../img/7.png);
+}
+.img8{
+    background: url(../img/8.png);
+}
+.img9{
+    background: url(../img/9.png);
+}
+
+
+.emoji-btn::after {
+    /* content: '❤️'; */
+    background-image: url(img/test1.png);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transition: transform 300ms;
+}
+
+.emoji-btn span {
+    width: 100%;
+    height: 100%;
+    border-radius: 0%;
+    transform: scale(0);
+    transition: transform 300ms cubic-bezier(0.22, 0.64, 0.69, 1.3), background-color 1s, box-shadow 1.5s;
+}
+
+.uncovered::after {
+    transform: rotate(-600deg) scale(0);
+    background: #FDC400;
+}
+
+.uncovered span {
+    transform: scale(1);
+    background: #FDC400;
+}
+
+.winning-emoji span {
+    width: 100%;
+    background-color: rgba(255, 217, 0, 0.85);
+    box-shadow: 0 0 10px 20px rgba(255, 217, 0, 0.85);
+}
+
+.dialog-box {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    width: 500px;
+    height: 150px;
+    font-weight: 600;
+    border-radius: 25px;
+    border: 3px solid #5b2361;
+    background-image: linear-gradient(to right, #b465da, #cf6cc9 33%, #ee609c 66%, #ee609c);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    transform: translate(-50%, -50%);
+}
+
+.show-dialog {
+    display: flex;
+    animation: showDialog 0.5s 1s forwards cubic-bezier(0.17, 0.67, 0.63, 1.3);
+}
+
+.dialog-message {
+    font-size: 35px;
+    margin-bottom: 0;
+}
+
+.dollar-bill {
+    position: absolute;
+    bottom: 100%;
+    font-size: 50px;
+    user-select: none;
+    animation: rainMoney 3s linear forwards;
+}
+
+.dollar-bill:nth-child(2n) {
+    animation-delay: 100ms;
+}
+
+.dollar-bill:nth-child(3n) {
+    animation-delay: 400ms;
+}
+
+.dollar-bill:nth-child(4n) {
+    animation-delay: 800ms;
+}
+
+.dollar-bill:nth-child(5n) {
+    animation-delay: 1.2s;
+}
+
+@keyframes showDialog {
+    100% {
+        top: 50%;
+    }
+}
+
+@keyframes rainMoney {
+    90% {
+        opacity: 1;
+    }
+    
+    100% {
+        opacity: 0;
+        bottom: 15px;
+        transform: rotate(360deg);
+    }
+}
